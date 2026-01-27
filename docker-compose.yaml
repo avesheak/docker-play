@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: docker-file:v1
-
+    image: docker-file:v1 ${Image-tag:-latest}
+    ports:
+      - 7777:5000
+      #host port : docker port
     
