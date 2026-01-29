@@ -1,10 +1,32 @@
-services: 
+version: "3.9"
+
+services:
   backend:
     build:
       context: .
       dockerfile: Dockerfile
-    image: docker-file:v1 ${Image-tag:-latest}
+    image: docker-file:${IMAGE_TAG:-v1}
     ports:
-      - 7777:5000
-      #host port : docker port
-    
+      - "7777:5000"   # host:container
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5000"]
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+
+  db:
+    image: mysql:8.4.3
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app_db
+    healthcheck:
+      test: mysql -u root -e "seclect 1"
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
