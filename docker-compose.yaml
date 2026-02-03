@@ -16,6 +16,16 @@ services:
       timeout: 30s
       retries: 5
       start_period: 30s
+    develop: 
+      watch:
+        - path: ./requirements.txt 
+          action: sync 
+          target: /dektop/docker
+        - action: rebuild
+          path: ./requirements.txt 
+    restart: on-failure
+    networks:
+      - my-app-network
 
   db:
     image: mysql:8.4.3
@@ -25,8 +35,15 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: app_db
     healthcheck:
-      test: mysql -u root -e "seclect 1"
+      test: ["CMD-SHELL", "mysql -u root -e 'select 1'"]
       interval: 1m30s
       timeout: 30s
       retries: 5
       start_period: 30s
+networks: 
+  my-app-network: {}
+    
+
+
+ 
+
