@@ -1,0 +1,13 @@
+Name: Run CI when action is triggerd
+on: 
+  - push 
+  #- pull_request 
+jobs: 
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      - name: Docker contaner build  
+      - run: Docker compose build backend
+      - name: Run unit test
+      - run: docker compose up backend
