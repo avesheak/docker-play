@@ -21,3 +21,6 @@ jobs:
         run: docker compose up -d backend
       - nme: stope backend service
         run: docker compose stop backend
+
+#Testing nw git command 
+#docker separator
