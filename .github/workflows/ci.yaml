@@ -20,4 +20,4 @@ jobs:
       - name: Start backend service
         run: docker compose up -d backend
       - nme: stope backend service
-        eun: docker compose stop backend
+        run: docker compose stop backend
