@@ -42,7 +42,6 @@ services:
       start_period: 30s
 networks: 
   my-app-network: {}
-    new update
     
 
 
