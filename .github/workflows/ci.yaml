@@ -24,10 +24,13 @@
 #       - name: Stop backend service
 #         run: docker compose down
 name : CI_Setps
+
 on : 
   workflow_dispatch:
+
 jobs: 
   Linux_shell_check:
     runs-on: ubuntu-latest
-    run: echo "Hellow WOrld"
+    steps:
+      run: echo "Hellow WOrld"
 
