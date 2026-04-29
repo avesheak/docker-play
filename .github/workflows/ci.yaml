@@ -34,3 +34,7 @@ jobs:
     steps:
       - name: Print Hello World
         run: echo "Hello World"
+    step:
+      - name: Run on python
+        run: print("Hello World")
+        shell: pyhton
