@@ -23,14 +23,14 @@
 
 #       - name: Stop backend service
 #         run: docker compose down
-name : CI_Setps
+name: CI_Steps
 
-on : 
+on:
   push:
 
-jobs: 
+jobs:
   Linux_shell_check:
     runs-on: ubuntu-latest
     steps:
-      run: echo "Hellow WOrld"
-
+      - name: Print Hello World
+        run: echo "Hello World"
