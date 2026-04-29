@@ -38,5 +38,5 @@ jobs:
     runs-on: ubuntu latest
     steps:
       - name: Run on python
-        run: python c 'print("Hello World")''
+        run: python -c 'print("Hello World")'
       
