@@ -34,7 +34,9 @@ jobs:
     steps:
       - name: Print Hello World
         run: echo "Hello World"
+  Phyton_command:
+    runs-on: ubuntu latest
     steps:
       - name: Run on python
-        run: print("Hello World")
-        shell: pyhton
+        run: python c 'print("Hello World")''
+      
