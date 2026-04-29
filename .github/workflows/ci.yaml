@@ -1,25 +1,33 @@
-name: Run CI when action is triggered
+# name: Run CI when action is triggered
 
-on:
-  push:
-  # pull_request:
+# on:
+#   push:
+#   # pull_request:
 
-jobs:
-  link-check:
+# jobs:
+#   link-check:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Build Docker container
+#         run: docker compose build backend
+
+#       - name: Run unit tests
+#         run: docker compose run --rm backend pytest
+
+#       - name: Start backend service
+#         run: docker compose up -d backend
+
+#       - name: Stop backend service
+#         run: docker compose down
+name : CI_Setps
+on : 
+  workflow_dispatch:
+jobs: 
+  Linux_shell_check:
     runs-on: ubuntu-latest
+    run: echo "Hellow WOrld"
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Build Docker container
-        run: docker compose build backend
-
-      - name: Run unit tests
-        run: docker compose run --rm backend pytest
-
-      - name: Start backend service
-        run: docker compose up -d backend
-
-      - name: Stop backend service
-        run: docker compose down
