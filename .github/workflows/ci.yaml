@@ -26,7 +26,7 @@
 name : CI_Setps
 
 on : 
-  workflow_dispatch:
+  push:
 
 jobs: 
   Linux_shell_check:
