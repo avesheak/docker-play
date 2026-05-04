@@ -47,7 +47,7 @@
 name: needs-Git-action
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   job-1:
