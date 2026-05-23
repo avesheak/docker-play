@@ -1,0 +1,7 @@
+name: Deploy on kubernetes
+on:
+  workflow_run:
+    workflows: 
+      - "needs-Git-action"
+  types:
+    - "completed"
